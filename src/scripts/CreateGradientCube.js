@@ -54,6 +54,7 @@ export function createEdge(vertex1, vertex2, color1, color2, dim) {
 // function distance(vertex1, vertex2) {
 //     return Math.sqrt(Math.pow(vertex2[0] - vertex1[0], 2) + Math.pow(vertex2[1] - vertex1[1], 2) + Math.pow(vertex2[2] - vertex1[2], 2))
 // }
+
 function hexToRgb(hex) {
     return {
         r: (hex >> 16) & 0xFF,  // Extract the red component

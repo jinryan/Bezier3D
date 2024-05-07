@@ -285,7 +285,6 @@ dragControls.addEventListener('drag', function(event) {
   curveGeometry.setFromPoints(curve.getPoints(100));
   renderer.render(scene, camera);
   reestimate()
-
 });
 
 const orbit = new OrbitControls(camera, renderer.domElement);
@@ -331,9 +330,9 @@ for (let p in approximateBezierPoints) {
 function reGeneratePoints() {
   for (let p in approximateBezierPoints) {
     let coord = approximateBezierPoints[p]
-    approxPointGeometry = new THREE.SphereGeometry(0.1, 10, 10);
-    approxPointMaterial = new THREE.MeshBasicMaterial({ color: getColorOfPoint(cubeConfig, coord) });
-    approxPoint = new THREE.Mesh(approxPointGeometry, approxPointMaterial);
+    let approxPointGeometry = new THREE.SphereGeometry(0.1, 10, 10);
+    let approxPointMaterial = new THREE.MeshBasicMaterial({ color: getColorOfPoint(cubeConfig, coord) });
+    let approxPoint = new THREE.Mesh(approxPointGeometry, approxPointMaterial);
     approxPoint.position.copy(coord)
     approxPoint.name = "BEZIER_APPROX_P" + p
     approxPoint.visible = options.EstimateBezierPoints
